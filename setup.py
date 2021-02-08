@@ -14,20 +14,20 @@ plugin_package = "octoprint_touchtest"
 plugin_name = "OctoPrint-Touchtest"
 
 # The plugin's version. Can be overwritten within OctoPrint's internal data via __plugin_version__ in the plugin module
-plugin_version = "0.4.1"
+plugin_version = "0.4.2"
 
 # The plugin's description. Can be overwritten within OctoPrint's internal data via __plugin_description__ in the plugin
 # module
 plugin_description = """A simple tool to move the extruder to different touch points around the perimeter of the print bed. Useful for bed leveling"""
 
 # The plugin's author. Can be overwritten within OctoPrint's internal data via __plugin_author__ in the plugin module
-plugin_author = "Daniel Miller"
+plugin_author = "Michael Steinhagen (forked from Daniel Miller)"
 
 # The plugin's author's mail address.
-plugin_author_email = "Peaches491@gmail.com"
+plugin_author_email = "mike.steini@gmx.de"
 
 # The plugin's homepage URL. Can be overwritten within OctoPrint's internal data via __plugin_url__ in the plugin module
-plugin_url = "https://github.com/Peaches491/OctoPrint-Touchtest"
+plugin_url = "https://github.com/msteini82/OctoPrint-Touchtest"
 
 # The plugin's license. Can be overwritten within OctoPrint's internal data via __plugin_license__ in the plugin module
 plugin_license = "AGPLv3"
