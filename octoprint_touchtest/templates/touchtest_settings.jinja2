@@ -18,11 +18,20 @@
     </div>
   </div>
   <div class="control-group">
-    <label class="control-label">{{ _('Edge Offset') }}</label>
+    <label class="control-label">{{ _('Edge X Offset') }}</label>
     <div class="controls input-append">
       <input type="number"
              class="input-block-level"
-             data-bind="value: settings.plugins.touchtest.edgeOffset">
+             data-bind="value: settings.plugins.touchtest.edgeXOffset">
+      <span class="add-on">mm</span>
+    </div>
+  </div>
+  <div class="control-group">
+    <label class="control-label">{{ _('Edge Y Offset') }}</label>
+    <div class="controls input-append">
+      <input type="number"
+             class="input-block-level"
+             data-bind="value: settings.plugins.touchtest.edgeYOffset">
       <span class="add-on">mm</span>
     </div>
   </div>
