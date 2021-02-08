@@ -32,9 +32,9 @@ $(function() {
       }
 
       code.push("G90"); //Set to Absolute Positioning
-      code.push("G0 Z1"); //Raise bed 1mm
+      code.push("G0 Z10"); //Raise bed 10mm
       code.push("G0 X" + xPos + " Y" + yPos + " F" + self.feedrate()); //Go to desired position
-      code.push("G0 Z0"); //Lower bed back to zero
+      code.push("G28 Z"); //Lower bed back to Home Z
 
       OctoPrint.control.sendGcode(code);
     }
