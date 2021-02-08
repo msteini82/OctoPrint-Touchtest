@@ -13,7 +13,8 @@ class TouchtestPlugin(octoprint.plugin.SettingsPlugin,
         return dict(
             bedWidth=200.0,
             bedDepth=200.0,
-            edgeOffset=15.0,
+            edgeXOffset=15.0,
+					  edgeYOffset=15.0,
             feedrate=7500.0,
         )
 
@@ -26,28 +27,6 @@ class TouchtestPlugin(octoprint.plugin.SettingsPlugin,
             js=["js/touchtest.js"],
             css=["css/touchtest.css"],
             less=["less/touchtest.less"]
-        )
-
-    ##~~ Softwareupdate hook
-
-    def get_update_information(self):
-        # Define the configuration for your plugin to use with the Software Update
-        # Plugin here. See https://github.com/foosel/OctoPrint/wiki/Plugin:-Software-Update
-        # for details.
-        return dict(
-            touchtest=dict(
-                displayName="Touchtest Plugin",
-                displayVersion=self._plugin_version,
-
-                # version check: github repository
-                type="github_release",
-                user="Peaches491",
-                repo="OctoPrint-Touchtest",
-                current=self._plugin_version,
-
-                # update method: pip
-                pip="https://github.com/Peaches491/OctoPrint-Touchtest/archive/{target_version}.zip"
-            )
         )
 
     def get_template_configs(self):
@@ -63,9 +42,4 @@ __plugin_pythoncompat__ = ">=2.7,<4"  # python 2 and 3
 def __plugin_load__():
     global __plugin_implementation__
     __plugin_implementation__ = TouchtestPlugin()
-
-    global __plugin_hooks__
-    __plugin_hooks__ = {
-        "octoprint.plugin.softwareupdate.check_config": __plugin_implementation__.get_update_information
-    }
 
