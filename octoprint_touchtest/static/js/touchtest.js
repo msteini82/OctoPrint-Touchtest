@@ -14,16 +14,19 @@ $(function() {
 
     self.bedWidth = ko.observable("200.00")
     self.bedDepth = ko.observable("200.00")
-    self.edgeOffset = ko.observable("15.00")
+    self.edgeXOffset = ko.observable("15.00")
+    self.edgeYOffset = ko.observable("15.00")
     self.feedrate = ko.observable("1000")
     self.isOperational = ko.observable(undefined);
     self.isPrinting = ko.observable(undefined);
 
     self.testPrint = function(wMult, dMult) {
-      var wEffective = self.bedWidth() - 2* self.edgeOffset()
-      var dEffective = self.bedDepth() - 2* self.edgeOffset()
-      var xPos = 1.0*self.edgeOffset() + (wMult*wEffective);
-      var yPos = 1.0*self.edgeOffset() + (dMult*dEffective);
+        
+      var wEffective = self.bedWidth() - 2* self.edgeXOffset()
+      var dEffective = self.bedDepth() - 2* self.edgeYOffset()
+      
+      var xPos = 1.0*self.edgeXOffset() + (wMult*wEffective);
+      var yPos = 1.0*self.edgeYOffset() + (dMult*dEffective);
 
       var code = [];
       if (!homed) { //Home the printer if not homed
@@ -42,7 +45,8 @@ $(function() {
     self.onBeforeBinding = function() {
       self.bedWidth(self.settings.settings.plugins.touchtest.bedWidth());
       self.bedDepth(self.settings.settings.plugins.touchtest.bedDepth());
-      self.edgeOffset(self.settings.settings.plugins.touchtest.edgeOffset());
+      self.edgeXOffset(self.settings.settings.plugins.touchtest.edgeXOffset());
+      self.edgeYOffset(self.settings.settings.plugins.touchtest.edgeYOffset());
       self.feedrate(self.settings.settings.plugins.touchtest.feedrate());
     }
 
